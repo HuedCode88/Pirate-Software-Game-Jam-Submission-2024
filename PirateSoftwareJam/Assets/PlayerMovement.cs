@@ -10,13 +10,13 @@ public class NewBehaviourScript : MonoBehaviour
     public float jump;
     public bool grounded;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D body;
 
     // Start is called before the first frame update
     void Start()
     {
         // Initialize variables
-        rb = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Basically everything I did here was using Unity's built-in physics engine with RigidBody. It's honestly not THAT hard
@@ -31,12 +31,12 @@ public class NewBehaviourScript : MonoBehaviour
         Move = Input.GetAxis("Horizontal");
 
         // Applies horizontal speed
-        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+        body.velocity = new Vector2(speed * Move, body.velocity.y);
 
-        // Checks if input (Spacebar) is HELD DOWN and applies vertical speed
+        // Checks for input (Spacebar) and applies vertical speed
         if (Input.GetButtonDown("Jump") && grounded == true)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
+            body.AddForce(new Vector2(body.velocity.x, jump));
         }
     }
 

@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  jump: 500
+  jump: 900
   grounded: 0
 --- !u!61 &1260896424
 BoxCollider2D:
@@ -567,7 +567,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.99}
   m_EdgeRadius: 0
 --- !u!50 &1260896425
 Rigidbody2D:
@@ -583,8 +583,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 1
+  m_GravityScale: 6
   m_Material: {fileID: 6200000, guid: ac89a337abc6e2f45aa17ce72d97fb55, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -595,7 +595,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1260896426
 SpriteRenderer:
   m_ObjectHideFlags: 0
