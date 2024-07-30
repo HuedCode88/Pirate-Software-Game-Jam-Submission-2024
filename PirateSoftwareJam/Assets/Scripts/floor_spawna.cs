@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class floor_spawna : MonoBehaviour
 {
-
+    Player player;
     public float groundHeight;
     public float groundRight;
     public float screenRight;
     BoxCollider2D collider;
     
-    [SerializeField] public public Camera mainCamera;
+    [SerializeField] public Camera mainCamera;
 
     private void Awake()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerPrefs>;
+
         collider = GetComponent<BoxCollider2D>();
         groundHeight = transform.position.y + (collider.size.y / 2);
     }
@@ -36,10 +38,8 @@ public class floor_spawna : MonoBehaviour
 // Update is called once per frame
         void Update()
         {
-        screenRight = GetRightSidePosition(mainCamera);
-    
-
-        }
+            screenRight = GetRightSidePosition(mainCamera);
+}
         void FixedUpdate()
         {
         groundRight = transform.position.x + (collinder.size.x / 2);
@@ -47,7 +47,7 @@ public class floor_spawna : MonoBehaviour
     if (!didGenerateGround)
     {
 
-        if (groundRight < screenRight)
+        if (GetRightSidePosition(mainCamera) < screenRight)
         {
             didGenerateGround = true;
             generateGround();
