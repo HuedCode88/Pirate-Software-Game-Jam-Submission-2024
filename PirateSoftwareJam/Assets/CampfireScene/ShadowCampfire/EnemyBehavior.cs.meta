@@ -3,7 +3,9 @@ guid: d3e9f6d172a20c54384737f2bf62eed6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - campHealth: {fileID: 4262926263477865117, guid: b94ec3994cd0ad742982b961662305ce, type: 3}
+  - Camp: {fileID: 4773807202579995861, guid: b94ec3994cd0ad742982b961662305ce, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

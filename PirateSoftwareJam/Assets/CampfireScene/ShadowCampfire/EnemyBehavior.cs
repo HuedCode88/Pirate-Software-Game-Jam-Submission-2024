@@ -12,7 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     public Transform Camp;
     
     //self explanatory variables
-    int MoveSpeed = 4;
+    [SerializeField] int MoveSpeed = 3;
     int MinDist = 1;
     private float range;
     public bool isAlive = true;
@@ -49,6 +49,7 @@ public class EnemyBehavior : MonoBehaviour
             kill();
         }
 
+        //useless
         if (isAlive == false)
         {
             kill();

@@ -5,10 +5,10 @@ using UnityEngine;
 public class CampfireHealth : MonoBehaviour
 {
     //health points and dealing damage easy
-    int hp = 3;
+    public int hp = 3;
     public void campDamage()
     {
-        hp--;
+        hp -= 1;
     }
 
     // Start is called before the first frame update
@@ -20,6 +20,8 @@ public class CampfireHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hp <= 0) {
+            Destroy(gameObject);
+        }
     }
 }
