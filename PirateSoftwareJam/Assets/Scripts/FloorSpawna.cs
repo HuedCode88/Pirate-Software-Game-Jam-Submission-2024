@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class FloorSpawna : MonoBehaviour
 {
-    public static int minDist = 100;
-    public static int maxDist = 200;
-    public int width= Random.Range(minDist, maxDist);
+    public static int minDist = 2000;
+    public static int maxDist = 4000;
+    public int width;
     public int height=1;
     [SerializeField] GameObject floor;
+    int start=0;
     
 
 
@@ -22,14 +23,22 @@ public class FloorSpawna : MonoBehaviour
 
     void Generation()//floor making
     {
+        width = Random.Range(minDist, maxDist);
         for (int x = 0; x < width; x++)//this will help spawn a tile on the x axis
         {
             width += (int)secValue;
-            int minHeight = height - 1;
-            int maxHeight = height + 2;
-
-            height = Random.Range(minHeight, maxHeight);
-
+            if (start<5)
+            {
+                int minHeight = height;
+                int maxHeight = height;
+                height = Random.Range(minHeight, maxHeight);
+                start++;
+            }
+            else {
+                int minHeight = height - 1;
+                int maxHeight = height + 2;
+                height = Random.Range(minHeight, maxHeight);
+            }
             for (int y = 0; y < height; y++)
             {//this will help spawn a tile on the x axis
 
@@ -38,10 +47,7 @@ public class FloorSpawna : MonoBehaviour
         }
 
     }
-    void GenerateFlatPlatform()
-    {
-
-    }
+    
 
     void spawnObj(GameObject obj, int width, int height)//what ever we spawn will be a child of our procedural generation game obj
     {
