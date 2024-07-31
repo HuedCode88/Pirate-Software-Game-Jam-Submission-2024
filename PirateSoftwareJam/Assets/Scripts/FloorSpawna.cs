@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FloorSpawna : MonoBehaviour
 {
-    public static int minDist = 200;
-    public static int maxDist = 400;
+    public static int minDist = 1000;
+    public static int maxDist = 1500;
     public int width;
     public int height=1;
     [SerializeField] GameObject floor;
